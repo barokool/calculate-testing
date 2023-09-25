@@ -59,15 +59,29 @@ namespace Buoi07_TinhToan3
         {
             //lấy giá trị của 2 ô số
             double so1, so2, kq = 0;
+            Boolean check = true;
             so1 = double.Parse(txtSo1.Text);
             so2 = double.Parse(txtSo2.Text);
             //Thực hiện phép tính dựa vào phép toán được chọn
             if (radCong.Checked) kq = so1 + so2;
             else if (radTru.Checked) kq = so1 - so2;
             else if (radNhan.Checked) kq = so1 * so2;
-            else if (radChia.Checked && so2 != 0) kq = so1 / so2;
+            else if (radChia.Checked)
+            {
+                if (so2 == 0)
+                {
+                    DialogResult dr;
+                    dr = MessageBox.Show("Số thứ hai phải khác 0",
+                                         "Thông báo", MessageBoxButtons.OK);
+                    check = false;
+                    txtSo2.Focus();
+                } else kq = so1/so2;
+            };
             //Hiển thị kết quả lên trên ô kết quả
-            txtKq.Text = kq.ToString();
+            if (check == false)
+            {
+                txtKq.Text = "";
+            } else txtKq.Text = kq.ToString();
         }
     }
 }
