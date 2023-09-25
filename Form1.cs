@@ -57,6 +57,24 @@ namespace Buoi07_TinhToan3
 
         private void btnTinh_Click(object sender, EventArgs e)
         {
+
+            if (string.IsNullOrEmpty(txtSo1.Text))
+            {
+                MessageBox.Show("Vui lòng nhập số thứ nhất.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtSo1.Focus();     // Focus vào ô "Số thứ nhất"
+                txtSo1.SelectAll(); // Chọn toàn bộ nội dung trong ô "Số thứ nhất"
+                return; // Dừng thực hiện phép tính nếu có lỗi
+            }
+
+            // Kiểm tra xem ô "Số thứ hai" có dữ liệu hay không
+            if (string.IsNullOrEmpty(txtSo2.Text))
+            {
+                MessageBox.Show("Vui lòng nhập số thứ hai.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtSo2.Focus();     // Focus vào ô "Số thứ hai"
+                txtSo2.SelectAll(); // Chọn toàn bộ nội dung trong ô "Số thứ hai"
+                return; // Dừng thực hiện phép tính nếu có lỗi
+            }
+
             //lấy giá trị của 2 ô số
             double so1, so2, kq = 0;
             Boolean check = true;
@@ -82,6 +100,18 @@ namespace Buoi07_TinhToan3
             {
                 txtKq.Text = "";
             } else txtKq.Text = kq.ToString();
+        }
+
+        private void txtSo1_Click(object sender, EventArgs e)
+        {
+            txtSo1.SelectAll(); // Chọn toàn bộ văn bản trong ô txtSo1
+            txtSo1.Focus();
+        }
+
+        private void txtSo2_Click(object sender, EventArgs e)
+        {
+            txtSo2.SelectAll(); // Chọn toàn bộ văn bản trong ô txtSo2
+            txtSo2.Focus();
         }
     }
 }
