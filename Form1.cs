@@ -20,33 +20,28 @@ namespace Buoi07_TinhToan3
         private void Form1_Load(object sender, EventArgs e)
         {
             txtSo1.Text = txtSo2.Text = "0";
-            radCong.Checked = true;             //đầu tiên chọn phép cộng
+            radCong.Checked = true;            
         }
 
         private void txtSo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Kiểm tra xem ký tự nhập vào có phải là số, ký tự control (như phím Backspace), 
-            // hoặc dấu trừ (nếu là ký tự đầu tiên) không
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
                 (e.KeyChar != '-' || txtSo1.SelectionStart != 0 || txtSo1.Text.Contains('-')))
             {
-                e.Handled = true; // Ngăn việc nhập ký tự không hợp lệ
+                e.Handled = true; 
             }
 
-            if (txtSo1.Text.Length >= 10 && e.KeyChar != '\b') // '\b' là ký tự Backspace
+            if (txtSo1.Text.Length >= 10 && e.KeyChar != '\b') 
             {
-                e.Handled = true; // Ngăn việc nhập quá 10 chữ số
+                e.Handled = true; 
             }
 
-            // Kiểm tra giới hạn của số nguyên
             if (e.KeyChar == '-' && txtSo1.Text.Length == 0)
             {
-                // Cho phép nhập dấu trừ nếu là ký tự đầu tiên
                 return;
             }
 
 
-            // get the current length of input 
             
         }
 
