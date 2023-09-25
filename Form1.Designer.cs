@@ -83,7 +83,7 @@
             this.txtKq.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtKq.Location = new System.Drawing.Point(162, 87);
             this.txtKq.Name = "txtKq";
-            this.txtKq.Size = new System.Drawing.Size(100, 26);
+            this.txtKq.Size = new System.Drawing.Size(350, 26);
             this.txtKq.TabIndex = 15;
             this.txtKq.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -93,7 +93,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(22, 87);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 20);
+            this.label3.Size = new System.Drawing.Size(100, 20);
             this.label3.TabIndex = 14;
             this.label3.Text = "Kết quả:";
             // 
@@ -102,9 +102,11 @@
             this.txtSo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSo2.Location = new System.Drawing.Point(162, 48);
             this.txtSo2.Name = "txtSo2";
-            this.txtSo2.Size = new System.Drawing.Size(100, 26);
+            this.txtSo2.Size = new System.Drawing.Size(350, 26);
             this.txtSo2.TabIndex = 13;
             this.txtSo2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtSo2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSo_KeyPress);
+
             // 
             // label2
             // 
@@ -112,7 +114,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(22, 48);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 20);
+            this.label2.Size = new System.Drawing.Size(100, 20);
             this.label2.TabIndex = 12;
             this.label2.Text = "Nhập số thứ hai:";
             // 
@@ -121,9 +123,11 @@
             this.txtSo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSo1.Location = new System.Drawing.Point(162, 12);
             this.txtSo1.Name = "txtSo1";
-            this.txtSo1.Size = new System.Drawing.Size(100, 26);
+            this.txtSo1.Size = new System.Drawing.Size(350, 26);
             this.txtSo1.TabIndex = 11;
             this.txtSo1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtSo1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSo_KeyPress);
+
             // 
             // label1
             // 
@@ -199,7 +203,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(288, 266);
+            this.ClientSize = new System.Drawing.Size(600, 266);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnTinh);
